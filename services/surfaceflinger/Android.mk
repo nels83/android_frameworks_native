@@ -130,7 +130,8 @@ include $(BUILD_SHARED_LIBRARY)
 # build surfaceflinger's executable
 include $(CLEAR_VARS)
 
-LOCAL_LDFLAGS := -Wl,--version-script,art/sigchainlib/version-script.txt -Wl,--export-dynamic
+LOCAL_LDFLAGS := -Wl,--version-script,art/sigchainlib/version-script.txt -Wl,--export-dynamic -L vendor/samsung/p52xx/common/system/lib
+LOCAL_LDLIBS := -lmultidisplay
 LOCAL_CFLAGS:= -DLOG_TAG=\"SurfaceFlinger\"
 LOCAL_CPPFLAGS:= -std=c++11
 
